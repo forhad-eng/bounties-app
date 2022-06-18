@@ -15,11 +15,13 @@ function App() {
                 Bounties
             </h2>
             <DragDropContext onDragEnd={onDragEnd}>
-                {state.columnOrder.map(columnId => {
-                    const column = state.columns[columnId]
-                    const tasks = column.taskIds.map(taskId => state.tasks[taskId])
-                    return <Bounties key={column.id} column={column} tasks={tasks} />
-                })}
+                <div className="grid grid-cols-4 gap-10 mt-10 px-6">
+                    {state.columnOrder.map(columnId => {
+                        const column = state.columns[columnId]
+                        const tasks = column.taskIds.map(taskId => state.tasks[taskId])
+                        return <Bounties key={column.id} column={column} tasks={tasks} />
+                    })}
+                </div>
             </DragDropContext>
         </div>
     )
@@ -80,23 +82,27 @@ const initialState = {
     columns: {
         'column-1': {
             colId: 'column-1',
+            title: 'OPEN BOUNTIES',
             taskIds: [1, 2, 3]
         },
         'column-2': {
             colId: 'column-2',
+            title: 'ASSIGNED/IN PROCESS',
             taskIds: [4, 5, 6]
         },
         'column-3': {
             colId: 'column-3',
+            title: 'UNDER REVIEW',
             taskIds: [7, 8, 9]
         },
         'column-4': {
             colId: 'column-4',
+            title: 'CLOSE/REWARDED',
             taskIds: [10, 11, 12]
         }
     },
 
-    columnOrder: ['column-1', 'column-2', 'column-3']
+    columnOrder: ['column-1', 'column-2', 'column-3', 'column-4']
 }
 
 export default App
