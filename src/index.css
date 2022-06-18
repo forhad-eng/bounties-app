@@ -1,8 +1,13 @@
 body {
     margin: 0;
+    padding: 60px 80px;
     background: url('assets/bounties-bg.png');
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
