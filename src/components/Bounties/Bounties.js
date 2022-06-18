@@ -5,7 +5,7 @@ const Bounties = ({ column, tasks }) => {
     return (
         <div>
             <div
-                className={`bg-[#5A4860] rounded-tl-lg rounded-tr-lg mb-8 p-4 border-b-4 ${
+                className={`bg-[#5A4860] rounded-tl-lg rounded-tr-lg mb-8 p-3 border-b-4 ${
                     title === 'OPEN BOUNTIES' && 'border-[#C4C4C4]'
                 } ${title === 'ASSIGNED/IN PROCESS' && 'border-[#5F71D4]'} ${
                     title === 'UNDER REVIEW' && 'border-[#A516B9]'
@@ -30,7 +30,7 @@ const Bounties = ({ column, tasks }) => {
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
                                     >
-                                        <h4 className="text-lg font-bold py-5 px-4">Write A Blogpost For DAOHelp</h4>
+                                        <h4 className="text-lg font-bold py-5 px-4">Write A Blogpost For DAOHelper</h4>
                                         <p className="text-sm px-4">{task.taskDes}</p>
                                         <div
                                             className={`mt-4 p-2 px-4 text-sm rounded-bl-xl rounded-br-xl flex justify-between ${
