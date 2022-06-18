@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 60px 80px;
     background: url('assets/bounties-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 code {

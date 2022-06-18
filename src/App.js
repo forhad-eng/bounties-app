@@ -11,11 +11,11 @@ function App() {
 
     return (
         <div className="bg-[#100E2E] rounded-lg">
-            <h2 className="text-4xl text-white text-center font-bold border-b-2 border-[#4A4A4A] mx-6 pt-10 pb-1">
+            <h2 className="text-4xl text-white text-center font-bold border-b-[1px] border-[#4A4A4A] mx-6 pt-10 pb-1">
                 Bounties
             </h2>
             <DragDropContext onDragEnd={onDragEnd}>
-                <div className="grid grid-cols-4 gap-10 mt-10 px-6">
+                <div className="grid grid-cols-4 gap-6 mt-10 px-6">
                     {state.columnOrder.map(columnId => {
                         const column = state.columns[columnId]
                         const tasks = column.taskIds.map(taskId => state.tasks[taskId])
