@@ -23,9 +23,11 @@ const Bounties = ({ column, tasks }) => {
                     >
                         {tasks.map((task, index) => (
                             <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
-                                {provided => (
+                                {(provided, snapshot) => (
                                     <div
-                                        className="bg-[#5A4860] my-6 rounded-xl text-white"
+                                        className={`bg-[#5A4860] my-6 rounded-xl text-white ${
+                                            snapshot.isDragging ? 'border-2 border-[#A516B9]' : ''
+                                        }`}
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
