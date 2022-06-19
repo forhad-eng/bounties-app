@@ -42,6 +42,32 @@ const DragDrop = () => {
             setState(newState)
             return
         }
+
+        //if DND occur between the columns, below code block will be execute
+        const startTaskIds = [...sourceColumn.taskIds]
+        const [removedTaskId] = startTaskIds.splice(source.index, 1)
+        const newStartCol = {
+            ...sourceColumn,
+            taskIds: startTaskIds
+        }
+
+        const endTaskIds = [...destinationColumn.taskIds]
+        endTaskIds.splice(destination.index, 0, removedTaskId)
+        const newEndCol = {
+            ...destinationColumn,
+            taskIds: endTaskIds
+        }
+
+        const newState = {
+            ...state,
+            columns: {
+                ...state.columns,
+                [newStartCol.id]: newStartCol,
+                [newEndCol.id]: newEndCol
+            }
+        }
+
+        setState(newState)
     }
 
     return (

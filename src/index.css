@@ -14,3 +14,10 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media screen and (max-width: 576px) {
+    body {
+        padding: 30px 10px;
+        background: url('assets/bounties-bg.png');
+    }
+}
